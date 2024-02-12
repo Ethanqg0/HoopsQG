@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const cron = require('node-cron');
 const pug = require('pug');
+const { parse } = require('path');
 
 // Scrapes NBA data and saves it to a file
 async function scrapeNBAData(year, month, day) {
@@ -37,12 +38,40 @@ async function scrapeNBAData(year, month, day) {
     }
 }
 
-const compiledFunction = pug.compileFile('index.pug');
-const htmlOutput = compiledFunction({ name: 'ethan' });
 
-fs.writeFile('output.html', htmlOutput, (err) => {
-    if (err) throw err;
-    console.log('HTML file has been saved!');
+// Read data from JSON file
+const data = fs.readFileSync('data.json');
+const parsed = JSON.parse(data);
+
+// Initialize an array to store HTML outputs for each game
+const htmlOutputs = [];
+
+// Iterate through each game
+parsed.forEach(game => {
+    const name = game.player;
+    const statline = game.stats;
+    const stats = statline.split('\t');
+
+    // Parse stats for each game
+    const points = parseInt(stats[0]);
+    const rebounds = parseInt(stats[1]);
+    const assists = parseInt(stats[2]);
+
+    // Compile Pug template for each game
+    const compiledFunction = pug.compileFile('index.pug', { pretty: true });
+    const htmlOutput = compiledFunction({ name, points, rebounds, assists });
+
+    // Store HTML output for each game
+    htmlOutputs.push(htmlOutput);
+});
+
+// Write HTML outputs to separate files for each game
+htmlOutputs.forEach((htmlOutput, index) => {
+    const fileName = `../outputs/output_${index}.html`;
+    fs.writeFile(fileName, htmlOutput, (err) => {
+        if (err) throw err;
+        console.log(`${fileName} has been saved!`);
+    });
 });
 
 

@@ -12,5 +12,8 @@
     "node-cron": "^3.0.3",
     "pug": "^3.0.2",
     "puppeteer": "^22.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
   }
 }
