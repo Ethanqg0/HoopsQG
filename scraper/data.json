@@ -1,18 +1,82 @@
 [
   {
-    "player": "Jayson Tatum",
-    "stats": "26\t10\t9"
+    "player": "Tyrese Maxey",
+    "stats": "25.7\t3.6\t6.4"
   },
   {
-    "player": "Bam Adebayo",
-    "stats": "22\t13\t4"
+    "player": "Donovan Mitchell",
+    "stats": "28.2\t5.4\t6.3"
   },
   {
-    "player": "Domantas Sabonis",
-    "stats": "21\t11\t14"
+    "player": "Tyrese Haliburton",
+    "stats": "22.1\t3.9\t11.7"
   },
   {
-    "player": "Jalen Williams",
-    "stats": "32\t8\t9"
+    "player": "Miles Bridges",
+    "stats": "21.7\t7.1\t3.3"
+  },
+  {
+    "player": "Victor Wembanyama",
+    "stats": "20.3\t10.0\t3.1"
+  },
+  {
+    "player": "Scottie Barnes",
+    "stats": "20.1\t8.1\t5.9"
+  },
+  {
+    "player": "DeMar DeRozan",
+    "stats": "22.5\t4.1\t5.2"
+  },
+  {
+    "player": "Trae Young",
+    "stats": "27.1\t2.8\t10.8"
+  },
+  {
+    "player": "Nikola Jokic",
+    "stats": "26.2\t12.2\t9.0"
+  },
+  {
+    "player": "Giannis Antetokounmpo",
+    "stats": "30.7\t11.2\t6.3"
+  },
+  {
+    "player": "Zion Williamson",
+    "stats": "22.3\t5.5\t4.8"
+  },
+  {
+    "player": "Jaren Jackson Jr.",
+    "stats": "22.3\t5.5\t2.1"
+  },
+  {
+    "player": "Julius Randle",
+    "stats": "24.0\t9.2\t5.0"
+  },
+  {
+    "player": "Alperen Sengun",
+    "stats": "21.3\t9.3\t5.0"
+  },
+  {
+    "player": "Kyle Kuzma",
+    "stats": "21.8\t6.3\t4.2"
+  },
+  {
+    "player": "Luka Doncic",
+    "stats": "34.5\t8.8\t9.4"
+  },
+  {
+    "player": "Stephen Curry",
+    "stats": "28.1\t4.4\t4.8"
+  },
+  {
+    "player": "Lauri Markkanen",
+    "stats": "23.7\t8.5\t1.9"
+  },
+  {
+    "player": "Anthony Edwards",
+    "stats": "25.9\t5.2\t5.2"
+  },
+  {
+    "player": "Kawhi Leonard",
+    "stats": "24.2\t6.2\t3.8"
   }
 ]

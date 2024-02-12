@@ -22,7 +22,7 @@ function generateHTMLFromJSON(jsonFileName, pugFileName) {
         htmlOutputs.push(htmlOutput);
 
         // Write HTML output to a separate file for each game
-        const outputFileName = `output_${index}.html`;
+        const outputFileName = `../outputs/output_${index}.html`;
         fs.writeFile(outputFileName, htmlOutput, (err) => {
             if (err) throw err;
             console.log(`${outputFileName} has been saved!`);
