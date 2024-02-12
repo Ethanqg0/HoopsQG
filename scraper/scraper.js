@@ -38,46 +38,9 @@ async function scrapeNBAData(year, month, day) {
     }
 }
 
-
-// Read data from JSON file
-const data = fs.readFileSync('data.json');
-const parsed = JSON.parse(data);
-
-// Initialize an array to store HTML outputs for each game
-const htmlOutputs = [];
-
-// Iterate through each game
-parsed.forEach(game => {
-    const name = game.player;
-    const statline = game.stats;
-    const stats = statline.split('\t');
-
-    // Parse stats for each game
-    const points = parseInt(stats[0]);
-    const rebounds = parseInt(stats[1]);
-    const assists = parseInt(stats[2]);
-
-    // Compile Pug template for each game
-    const compiledFunction = pug.compileFile('index.pug', { pretty: true });
-    const htmlOutput = compiledFunction({ name, points, rebounds, assists });
-
-    // Store HTML output for each game
-    htmlOutputs.push(htmlOutput);
-});
-
-// Write HTML outputs to separate files for each game
-htmlOutputs.forEach((htmlOutput, index) => {
-    const fileName = `../outputs/output_${index}.html`;
-    fs.writeFile(fileName, htmlOutput, (err) => {
-        if (err) throw err;
-        console.log(`${fileName} has been saved!`);
-    });
-});
-
-
 /* HARD CODED TEST DATE
-scrapeNBAData('2024', '02', '11');
 */
+scrapeNBAData('2024', '02', '11');
 
 /* CRON JOB AUTOMATION
 cron.schedule('0 23 * * *', () => {
@@ -91,3 +54,5 @@ cron.schedule('0 23 * * *', () => {
     timezone: "AMERICA/Los_Angeles" // Provide your timezone, e.g., 'America/New_York'
 });
 */
+
+module.exports = { scrapeNBAData };
