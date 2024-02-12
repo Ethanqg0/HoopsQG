@@ -2,6 +2,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 const cron = require('node-cron');
+const pug = require('pug');
 
 // Scrapes NBA data and saves it to a file
 async function scrapeNBAData(year, month, day) {
@@ -35,6 +36,15 @@ async function scrapeNBAData(year, month, day) {
         console.log('Error:', error);
     }
 }
+
+const compiledFunction = pug.compileFile('index.pug');
+const htmlOutput = compiledFunction({ name: 'ethan' });
+
+fs.writeFile('output.html', htmlOutput, (err) => {
+    if (err) throw err;
+    console.log('HTML file has been saved!');
+});
+
 
 /* HARD CODED TEST DATE
 scrapeNBAData('2024', '02', '11');
