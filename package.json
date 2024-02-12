@@ -1,0 +1,15 @@
+{
+  "name": "nbascraping",
+  "version": "1.0.0",
+  "description": "puppeteer scraping",
+  "main": "scraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-cron": "^3.0.3",
+    "puppeteer": "^22.0.0"
+  }
+}
